@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { HubCards } from "@/components/layout/HubCards";
+import { HeroPreviewCard } from "@/components/layout/HeroPreviewCard";
 
 export const metadata: Metadata = {
   title: "Free Online Calculators | No Sign-Up | Works offline | No Ads",
@@ -165,36 +166,7 @@ export default function HomeHubPage() {
           </section>
 
           {/* Hero preview card */}
-          <section className="flex-1">
-            <div className="mx-auto max-w-sm rounded-[2.25rem] border border-stone-800/80 bg-gradient-to-b from-stone-900/90 via-stone-950 to-black/95 p-4 shadow-[0_20px_60px_rgba(0,0,0,0.8)] transition-transform duration-500 ease-out hover:-translate-y-1 hover:rotate-1">
-              <div className="mb-3 flex items-center justify-between text-[10px] font-medium text-stone-400">
-                <span className="inline-flex items-center gap-1">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                  Basic · Live
-                </span>
-                <span className="rounded-full bg-stone-900/80 px-2 py-1 text-[10px] text-stone-300">
-                  Tap to feel it
-                </span>
-              </div>
-              <div className="calculator-shell mx-auto w-full max-w-[320px] select-none rounded-[2rem] p-4">
-                <div className="calculator-screen mb-4 rounded-2xl border border-zinc-800/80 px-4 py-5">
-                  <p className="min-h-[1.25rem]" aria-hidden="true" />
-                  <p className="calculator-screen-text min-h-[3.5rem] truncate text-right font-mono text-4xl font-light tabular-nums text-white sm:min-h-[4rem] sm:text-5xl">
-                    1 234.56
-                  </p>
-                </div>
-                <div className="grid grid-cols-4 gap-2 text-xs text-stone-300">
-                  <span className="rounded-xl bg-stone-900/80 px-3 py-2 text-center">History</span>
-                  <span className="rounded-xl bg-stone-900/80 px-3 py-2 text-center">Copy</span>
-                  <span className="rounded-xl bg-stone-900/80 px-3 py-2 text-center">Share</span>
-                  <span className="rounded-xl bg-stone-900/80 px-3 py-2 text-center">MC/MR</span>
-                </div>
-              </div>
-              <p className="mt-3 text-[11px] text-stone-400">
-                Real-device styling, sticky bottom nav, and a history tape you can reuse.
-              </p>
-            </div>
-          </section>
+          <HeroPreviewCard />
         </div>
 
         <div className="relative mt-10 space-y-10">
@@ -260,18 +232,110 @@ export default function HomeHubPage() {
             </div>
           </section>
 
+          {/* Featured & all calculators */}
           <div className="relative">
+            <section className="mx-auto max-w-5xl">
+              <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-stone-400">
+                    Featured calculators
+                  </h2>
+                  <p className="mt-1 text-[11px] text-stone-500">
+                    Start with the most popular tools, then browse everything else below.
+                  </p>
+                </div>
+                <p className="text-[11px] text-stone-500">
+                  Finance, health, school, converters and more—no sign‑up, works in your browser.
+                </p>
+              </div>
+            </section>
+
             <HubCards />
           </div>
 
-          {/* Simple footer / meta */}
+          {/* SEO helper text */}
+          <section className="mx-auto max-w-5xl space-y-3 rounded-3xl border border-stone-900/80 bg-stone-950/70 px-4 py-4 text-[11px] text-stone-400 sm:text-xs">
+            <h2 className="text-sm font-semibold tracking-tight text-stone-100">
+              What you can calculate with Calculators.digital
+            </h2>
+            <p>
+              Use these free online calculators for everyday math, finances, health, school and quick unit conversions.
+              Open the basic calculator for four‑function work with history and memory, or switch to specialised
+              calculators for loans, BMI, GPA, dates, percentages and more as they launch.
+            </p>
+            <p>
+              Every calculator is designed to feel like a real device, with big thumb‑friendly buttons, keyboard
+              shortcuts on desktop and clear results you can reuse. Your history stays on this device—there is no
+              account, no emails and no clutter.
+            </p>
+          </section>
+
+          {/* FAQ section */}
+          <section className="mx-auto max-w-5xl space-y-4 rounded-3xl border border-stone-900/80 bg-stone-950/70 px-4 py-4 text-[11px] text-stone-400 sm:text-xs">
+            <h2 className="text-sm font-semibold tracking-tight text-stone-100">
+              Frequently asked questions about these calculators
+            </h2>
+            <div className="space-y-3">
+              <div>
+                <p className="font-semibold text-stone-200">Are these calculators free to use?</p>
+                <p className="mt-1">
+                  Yes. All calculators on Calculators.digital are free to use in your browser, with no sign‑up or
+                  subscription required.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-stone-200">Do you store my calculations or personal data?</p>
+                <p className="mt-1">
+                  No. Calculation history is kept locally in your browser so you can reuse it later, but it is not sent
+                  to a server or tied to an account.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-stone-200">Can I use these calculators on my phone?</p>
+                <p className="mt-1">
+                  Yes. The layouts are designed for phones first, with safe‑area padding, large tap targets and offline
+                  support after the first load.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-stone-200">What kinds of calculators are planned?</p>
+                <p className="mt-1">
+                  Alongside the basic, scientific and printing calculators, the roadmap includes finance (loan / EMI,
+                  mortgage, discounts, tax), health (BMI, BMR, water), converters (length, area, currency) and student
+                  tools (GPA, grade needed and more).
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Expanded footer / internal links */}
           <footer className="mx-auto max-w-5xl border-t border-stone-900/80 pt-5 text-[11px] text-stone-500">
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <p>Calculators.digital · calculators that feel like real devices.</p>
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div className="space-y-1">
+                <p className="font-medium text-stone-300">Calculators.digital</p>
+                <p>Calculators that feel like real devices, built for everyday use.</p>
+              </div>
+              <div className="grid gap-3 text-[11px] sm:grid-cols-3">
+                <div className="space-y-1">
+                  <p className="font-semibold text-stone-300">Everyday</p>
+                  <p>Basic, printing and tape‑style calculators for home and office.</p>
+                </div>
+                <div className="space-y-1">
+                  <p className="font-semibold text-stone-300">Finance & business</p>
+                  <p>Loan / EMI, mortgage payoff, discounts, tax / VAT and currency converters.</p>
+                </div>
+                <div className="space-y-1">
+                  <p className="font-semibold text-stone-300">Health & school</p>
+                  <p>BMI, BMR, water intake, GPA, grade needed and date / time helpers.</p>
+                </div>
+              </div>
+            </div>
+            <div className="mt-4 flex flex-wrap items-center justify-between gap-2 text-[10px] text-stone-600">
+              <p>© {new Date().getFullYear()} Calculators.digital</p>
               <div className="flex gap-3">
-                <span className="cursor-default text-stone-600">Roadmap</span>
-                <span className="cursor-default text-stone-600">Feedback</span>
-                <span className="cursor-default text-stone-600">About</span>
+                <span className="cursor-default">Roadmap</span>
+                <span className="cursor-default">Feedback</span>
+                <span className="cursor-default">About</span>
               </div>
             </div>
           </footer>

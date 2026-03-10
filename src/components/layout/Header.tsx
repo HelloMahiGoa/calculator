@@ -21,41 +21,53 @@ const NAV_LINKS: NavItem[] = [
 
 function Logo() {
   return (
-    <Link
-      href="/"
-      className="group flex items-center gap-2.5 transition-opacity hover:opacity-90 active:opacity-80"
-      aria-label="Calculators.digital – Home"
+    <motion.div
+      initial={{ opacity: 0, y: -6, scale: 0.96 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.35, ease: "easeOut" }}
     >
-      <span
-        className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-amber-500/20 text-amber-300 shadow-[0_10px_26px_rgba(15,15,15,0.65)] transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:rotate-2 group-active:scale-95"
-        aria-hidden
+      <Link
+        href="/"
+        className="group flex items-center gap-2.5 transition-opacity hover:opacity-90 active:opacity-80"
+        aria-label="Calculators.digital – Home"
       >
-        <span className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(255,255,255,0.25),transparent_55%)] opacity-70" />
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="relative z-10"
+        <motion.span
+          className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-amber-500/20 text-amber-300 shadow-[0_10px_26px_rgba(15,15,15,0.65)]"
+          aria-hidden
+          whileHover={{ rotate: 3, y: -1 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ type: "spring", stiffness: 260, damping: 20 }}
         >
-          <rect x="4" y="2" width="16" height="20" rx="4" />
-          <path d="M8 7h8M8 11h5" />
-          <path d="M9 16h1.5M13.5 16H15" />
-        </svg>
-      </span>
-      <div className="flex flex-col leading-tight">
-        <span className="logo-text text-[15px] font-semibold tracking-tight text-stone-100 sm:text-[16px]">
-          Calculators<span className="text-amber-300">.digital</span>
-        </span>
-        <span className="mt-0.5 text-[11px] font-medium uppercase tracking-[0.16em] text-stone-500">
-          Calculators that feel real
-        </span>
-      </div>
-    </Link>
+          <span className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(255,255,255,0.25),transparent_55%)] opacity-70" />
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="relative z-10"
+          >
+            <rect x="4" y="2" width="16" height="20" rx="4" />
+            <path d="M8 7h8M8 11h5" />
+            <path d="M9 16h1.5M13.5 16H15" />
+          </svg>
+        </motion.span>
+        <div className="flex flex-col leading-tight">
+          <span className="logo-text text-[16px] font-semibold tracking-tight text-stone-50 sm:text-[17px]">
+            <span className="font-[var(--font-sora)]">Calculators</span>
+            <span className="bg-gradient-to-r from-amber-200 via-amber-300 to-yellow-300 bg-clip-text text-transparent">
+              .digital
+            </span>
+          </span>
+          <span className="mt-0.5 text-[11px] font-medium uppercase tracking-[0.2em] text-stone-500">
+            Calculators that feel real
+          </span>
+        </div>
+      </Link>
+    </motion.div>
   );
 }
 
