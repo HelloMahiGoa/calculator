@@ -21,6 +21,8 @@ type Action =
   | { type: "unary"; payload: "square" | "sqrt" | "inv" | "cube" | "cuberoot" | "sin" | "cos" | "tan" | "log10" | "ln" }
   | { type: "toggleAngleMode" };
 
+type UnaryKind = Extract<Action, { type: "unary" }>["payload"];
+
 type AngleMode = "deg" | "rad";
 
 interface State {
@@ -75,7 +77,7 @@ function toRadians(n: number, mode: AngleMode) {
   return mode === "deg" ? (n * Math.PI) / 180 : n;
 }
 
-function unaryApply(n: number, kind: Action["payload"], mode: AngleMode): number {
+function unaryApply(n: number, kind: UnaryKind, mode: AngleMode): number {
   switch (kind) {
     case "square": return n * n;
     case "cube": return n * n * n;
