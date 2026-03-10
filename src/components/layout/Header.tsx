@@ -14,9 +14,10 @@ type NavItem = {
 
 const NAV_LINKS: NavItem[] = [
   { href: "/", label: "Home" },
-  { href: "/basic", label: "Basic", highlight: "primary" },
-  { href: "/scientific", label: "Scientific" },
-  { href: "/printing", label: "Printing" },
+  { href: "/about", label: "About" },
+  { href: "/roadmap", label: "Roadmap" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
 ];
 
 function Logo() {

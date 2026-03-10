@@ -2,10 +2,29 @@ import type { MetadataRoute } from "next";
 
 const BASE = "https://calculators.digital";
 
+const blogSlugs = [
+  "whats-next-march-2025",
+  "why-we-built-calculators-that-feel-real",
+  "keyboard-and-tap-friendly-design",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
+  const blogArticleUrls = blogSlugs.map((slug) => ({
+    url: `${BASE}/blog/${slug}`,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.4,
+  }));
   return [
     { url: BASE, lastModified, changeFrequency: "weekly", priority: 1 },
+    { url: `${BASE}/about`, lastModified, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${BASE}/roadmap`, lastModified, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${BASE}/blog`, lastModified, changeFrequency: "weekly", priority: 0.5 },
+    ...blogArticleUrls,
+    { url: `${BASE}/contact`, lastModified, changeFrequency: "monthly", priority: 0.4 },
+    { url: `${BASE}/terms`, lastModified, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${BASE}/privacy`, lastModified, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/basic`, lastModified, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/scientific`, lastModified, changeFrequency: "weekly", priority: 0.6 },
     { url: `${BASE}/printing`, lastModified, changeFrequency: "weekly", priority: 0.5 },
