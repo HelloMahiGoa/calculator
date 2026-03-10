@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Calculators.digital
 
-## Getting Started
+Mobile-first calculator website with a **real calculator look and feel**.
 
-First, run the development server:
+## Live calculators
+
+- **Basic** (`/basic`): Real keypad, step-by-step and expression (PEMDAS) modes, backspace, percent, memory (MC/MR/M+/M-), repeat equals, history tape (localStorage), copy/share, haptics and sound toggles, rounding controls.
+
+## Dev
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`. Home is the hub (search + favorites); `/basic` is the full calculator with bottom nav.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## SEO & ads
 
-To learn more about Next.js, take a look at the following resources:
+- **Sitemap** and **robots** are generated (`/sitemap.xml`, `/robots.txt`). JSON-LD: WebSite (root), SoftwareApplication + BreadcrumbList on calculator pages.
+- **Ads**: Consent-ready placeholder in `src/components/ads/AdSlot.tsx`. Set `NEXT_PUBLIC_ADS_ENABLED=1` and `NEXT_PUBLIC_ADSENSE_CLIENT_ID` to enable; integrate with your CMP for consent.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Performance
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Mobile-first layout, large touch targets, safe-area padding. Result announced to screen readers on equals only. For Core Web Vitals, run Lighthouse on `/basic`; keep dependencies minimal and avoid layout thrash in the calculator reducer.
 
-## Deploy on Vercel
+## Project structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `src/app/page.tsx` – Hub (search, calculator tiles, favorites).
+- `src/app/basic/page.tsx` – Basic calculator page + BottomNav.
+- `src/app/layout.tsx` – Root layout, metadata, WebSite JSON-LD.
+- `src/components/calculator/BasicCalculator.tsx` – Calculator UI and logic.
+- `src/components/layout/Header.tsx`, `BottomNav.tsx`, `HubCards.tsx`.
+- `src/lib/favorites.ts` – Favorites (localStorage).
+- `src/app/globals.css` – Theme and calculator shell styles.
