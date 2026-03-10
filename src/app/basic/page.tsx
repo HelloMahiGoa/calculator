@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { BasicCalculator } from "@/components/calculator/BasicCalculator";
-import { BottomNav } from "@/components/layout/BottomNav";
 import { BasicCalculatorJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { CalculatorHistoryContent } from "@/components/content/BasicContents";
 
@@ -142,8 +141,6 @@ export default function BasicPage() {
 
       {/* Shared content section for SEO */}
       <CalculatorHistoryContent />
-
-      <BottomNav />
     </>
   );
 }

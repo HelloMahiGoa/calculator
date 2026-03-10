@@ -1,17 +1,16 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { BottomNav } from "@/components/layout/BottomNav";
 import { HubCards } from "@/components/layout/HubCards";
 
 export const metadata: Metadata = {
-  title: "Free Online Calculators for Real Life | Calculators.digital",
+  title: "Free Online Calculators | No Sign-Up | Works offline | No Ads",
   description:
     "Use free online calculators that feel like real devices. Basic, scientific and printing calculators with history tapes, memory keys and mobile-first design.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Calculators.digital – Free Online Calculators for Real Life",
+    title: "Free Online Calculators | No Sign-Up | Works offline | No Ads",
     description:
       "A growing collection of basic, scientific and printing calculators with real-keypad design, history tapes and mobile-first layouts.",
     url: "/",
@@ -26,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Calculators.digital – Free Online Calculators for Real Life",
+    title: "Free Online Calculators | No Sign-Up | Works offline | No Ads",
     description:
       "Free online basic, scientific and printing calculators with real-device styling and keyboard support.",
     images: ["/images/basic-calculator.avif"],
@@ -45,63 +44,124 @@ export default function HomeHubPage() {
         <div className="relative mx-auto flex max-w-5xl flex-col gap-10 lg:flex-row lg:items-center">
           {/* Hero copy */}
           <section className="flex-1">
-            <div className="inline-flex items-center gap-2 rounded-full bg-stone-900/60 px-3 py-1 text-[11px] font-medium text-stone-300 ring-1 ring-stone-700/70">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              Live basic calculator · history · memory · mobile-first
-            </div>
-            <h1 className="mt-4 text-3xl font-semibold tracking-tight text-stone-50 sm:text-4xl lg:text-5xl">
-              Calculators that feel
-              <span className="relative mx-2 inline-block">
-                <span className="absolute -inset-1 rounded-full bg-amber-500/20 blur-lg" aria-hidden="true" />
-                <span className="relative bg-gradient-to-r from-amber-300 via-amber-200 to-yellow-300 bg-clip-text text-transparent">
-                  real
-                </span>
-              </span>
-              in your hand.
-            </h1>
-            <p className="mt-3 max-w-xl text-sm text-stone-400 sm:text-base">
-              A growing collection of calculators designed like premium devices, not boring forms.
-              Tap like a real keypad, keep a history tape, and save your favourites for later.
-            </p>
-
-            <div className="mt-5 flex flex-wrap items-center gap-3">
-              <Link
-                href="/basic"
-                className="inline-flex items-center gap-2 rounded-2xl bg-amber-500 px-5 py-3 text-sm font-semibold text-stone-950 shadow-[0_18px_45px_rgba(251,191,36,0.45)] transition hover:bg-amber-400"
-              >
-                Open Basic Calculator
-                <span aria-hidden>↗</span>
-              </Link>
-              <div className="flex items-center gap-2 text-[11px] text-stone-400">
-                <span className="rounded-full bg-stone-900/80 px-2 py-1 font-mono text-[10px] uppercase tracking-wide text-stone-300">
-                  No sign‑up
-                </span>
-                <span className="rounded-full bg-stone-900/80 px-2 py-1 font-mono text-[10px] uppercase tracking-wide text-stone-300">
-                  Works offline after load
-                </span>
+            {/* Mobile hero */}
+            <div className="sm:hidden">
+              <div className="mx-auto max-w-md text-center">
+                <div className="inline-flex items-center gap-2 rounded-full bg-stone-900/70 px-3 py-1 text-[11px] font-medium text-stone-300 ring-1 ring-stone-800/80">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  Live basic calculator · made for phones
+                </div>
+                <h1 className="mt-4 text-[26px] font-semibold leading-tight tracking-tight text-stone-50">
+                  Calculators that feel{" "}
+                  <span className="relative inline-block">
+                    <span className="absolute -inset-1 rounded-full bg-amber-500/25 blur-lg" aria-hidden="true" />
+                    <span className="relative bg-gradient-to-r from-amber-300 via-amber-200 to-yellow-300 bg-clip-text text-transparent">
+                      real
+                    </span>
+                  </span>
+                  <br />
+                  in your hand.
+                </h1>
+                <p className="mt-3 text-[13px] text-stone-400">
+                  Tap on big, thumb-friendly buttons, keep a running history tape, and save your favourite calculators
+                  for later.
+                </p>
+                <div className="mt-5 space-y-3">
+                  <Link
+                    href="/basic"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-amber-500 px-5 py-3 text-sm font-semibold text-stone-950 shadow-[0_18px_45px_rgba(251,191,36,0.45)] transition hover:bg-amber-400"
+                  >
+                    Open Basic Calculator
+                    <span aria-hidden>↗</span>
+                  </Link>
+                  <div className="flex items-center justify-center gap-2 text-[11px] text-stone-400">
+                    <span className="rounded-full bg-stone-900/80 px-2 py-1 font-mono text-[10px] uppercase tracking-wide text-stone-300">
+                      No sign‑up
+                    </span>
+                    <span className="rounded-full bg-stone-900/80 px-2 py-1 font-mono text-[10px] uppercase tracking-wide text-stone-300">
+                      Works offline after load
+                    </span>
+                  </div>
+                </div>
+                <dl className="mt-5 grid grid-cols-2 gap-3 text-[11px] text-stone-400">
+                  <div className="flex flex-col items-center gap-1 rounded-2xl bg-stone-950/70 p-3">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-stone-900 text-[11px] font-semibold text-amber-300 shadow-inner shadow-black/40">
+                      1
+                    </span>
+                    <dt className="font-semibold text-stone-200">Live now</dt>
+                    <dd className="text-[11px] text-stone-500">Basic calculator with history & memory.</dd>
+                  </div>
+                  <div className="flex flex-col items-center gap-1 rounded-2xl bg-stone-950/70 p-3">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-stone-900 text-[11px] font-semibold text-indigo-300 shadow-inner shadow-black/40">
+                      20+
+                    </span>
+                    <dt className="font-semibold text-stone-200">Planned</dt>
+                    <dd className="text-[11px] text-stone-500">Scientific, graphing, finance, health & more.</dd>
+                  </div>
+                </dl>
               </div>
             </div>
 
-            <dl className="mt-6 flex flex-wrap gap-4 text-xs text-stone-400">
-              <div className="flex items-center gap-2">
-                <span className="h-5 w-5 rounded-full bg-stone-900/90 text-[11px] font-semibold text-amber-300 shadow-inner shadow-black/40 flex items-center justify-center">
-                  1
+            {/* Desktop / tablet hero */}
+            <div className="hidden sm:block">
+              <div className="inline-flex items-center gap-2 rounded-full bg-stone-900/60 px-3 py-1 text-[11px] font-medium text-stone-300 ring-1 ring-stone-700/70">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                Live basic calculator · history · memory · mobile-first
+              </div>
+              <h1 className="mt-4 text-3xl font-semibold tracking-tight text-stone-50 sm:text-4xl lg:text-5xl">
+                Calculators that feel
+                <span className="relative mx-2 inline-block">
+                  <span className="absolute -inset-1 rounded-full bg-amber-500/20 blur-lg" aria-hidden="true" />
+                  <span className="relative bg-gradient-to-r from-amber-300 via-amber-200 to-yellow-300 bg-clip-text text-transparent">
+                    real
+                  </span>
                 </span>
-                <div>
-                  <dt className="font-semibold text-stone-200">Live now</dt>
-                  <dd>Basic calculator with history & memory.</dd>
+                in your hand.
+              </h1>
+              <p className="mt-3 max-w-xl text-sm text-stone-400 sm:text-base">
+                A growing collection of calculators designed like premium devices, not boring forms. Tap like a real
+                keypad, keep a history tape, and save your favourites for later.
+              </p>
+
+              <div className="mt-5 flex flex-wrap items-center gap-3">
+                <Link
+                  href="/basic"
+                  className="inline-flex items-center gap-2 rounded-2xl bg-amber-500 px-5 py-3 text-sm font-semibold text-stone-950 shadow-[0_18px_45px_rgba(251,191,36,0.45)] transition hover:bg-amber-400"
+                >
+                  Open Basic Calculator
+                  <span aria-hidden>↗</span>
+                </Link>
+                <div className="flex items-center gap-2 text-[11px] text-stone-400">
+                  <span className="rounded-full bg-stone-900/80 px-2 py-1 font-mono text-[10px] uppercase tracking-wide text-stone-300">
+                    No sign‑up
+                  </span>
+                  <span className="rounded-full bg-stone-900/80 px-2 py-1 font-mono text-[10px] uppercase tracking-wide text-stone-300">
+                    Works offline after load
+                  </span>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
-                <span className="h-5 w-5 rounded-full bg-stone-900/90 text-[11px] font-semibold text-indigo-300 shadow-inner shadow-black/40 flex items-center justify-center">
-                  20+
-                </span>
-                <div>
-                  <dt className="font-semibold text-stone-200">Planned</dt>
-                  <dd>Scientific, graphing, finance, health, and more.</dd>
+
+              <dl className="mt-6 flex flex-wrap gap-4 text-xs text-stone-400">
+                <div className="flex items-center gap-2">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-stone-900/90 text-[11px] font-semibold text-amber-300 shadow-inner shadow-black/40">
+                    1
+                  </span>
+                  <div>
+                    <dt className="font-semibold text-stone-200">Live now</dt>
+                    <dd>Basic calculator with history & memory.</dd>
+                  </div>
                 </div>
-              </div>
-            </dl>
+                <div className="flex items-center gap-2">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-stone-900/90 text-[11px] font-semibold text-indigo-300 shadow-inner shadow-black/40">
+                    20+
+                  </span>
+                  <div>
+                    <dt className="font-semibold text-stone-200">Planned</dt>
+                    <dd>Scientific, graphing, finance, health, and more.</dd>
+                  </div>
+                </div>
+              </dl>
+            </div>
           </section>
 
           {/* Hero preview card */}
@@ -217,7 +277,6 @@ export default function HomeHubPage() {
           </footer>
         </div>
       </div>
-      <BottomNav />
     </>
   );
 }

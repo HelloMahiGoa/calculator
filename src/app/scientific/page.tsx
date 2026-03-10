@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { ScientificCalculator } from "@/components/calculator/ScientificCalculator";
-import { BottomNav } from "@/components/layout/BottomNav";
 import { ScientificCalculatorJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { ScientificContent } from "@/components/content/ScientificContent";
 
@@ -130,8 +129,6 @@ export default function ScientificPage() {
       </div>
 
       <ScientificContent />
-
-      <BottomNav />
     </>
   );
 }

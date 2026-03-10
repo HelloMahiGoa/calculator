@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { PrintingCalculator } from "@/components/calculator/PrintingCalculator";
-import { BottomNav } from "@/components/layout/BottomNav";
 import { PrintingCalculatorJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { PrintingContent } from "@/components/content/PrintingContent";
 
@@ -110,8 +109,6 @@ export default function PrintingPage() {
       </div>
 
       <PrintingContent />
-
-      <BottomNav />
     </>
   );
 }
