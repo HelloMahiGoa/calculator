@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://calculators.digital"),
   title: { default: "Calculators.digital – Free Online Calculators", template: "%s | Calculators.digital" },
   description: "Free online calculators for home, office, and students. Basic calculator with real keypad, history, memory, and more. Mobile-first.",
+  icons: {
+    icon: "/images/favicon.png",
+  },
 };
 
 export const viewport = {

@@ -1,6 +1,37 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { BottomNav } from "@/components/layout/BottomNav";
 import { HubCards } from "@/components/layout/HubCards";
+
+export const metadata: Metadata = {
+  title: "Free Online Calculators for Real Life | Calculators.digital",
+  description:
+    "Use free online calculators that feel like real devices. Basic, scientific and printing calculators with history tapes, memory keys and mobile-first design.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Calculators.digital – Free Online Calculators for Real Life",
+    description:
+      "A growing collection of basic, scientific and printing calculators with real-keypad design, history tapes and mobile-first layouts.",
+    url: "/",
+    images: [
+      {
+        url: "/images/basic-calculator.avif",
+        width: 1200,
+        height: 630,
+        alt: "Basic calculator interface on Calculators.digital",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Calculators.digital – Free Online Calculators for Real Life",
+    description:
+      "Free online basic, scientific and printing calculators with real-device styling and keyboard support.",
+    images: ["/images/basic-calculator.avif"],
+  },
+};
 
 export default function HomeHubPage() {
   return (
