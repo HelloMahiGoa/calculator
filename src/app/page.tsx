@@ -308,37 +308,7 @@ export default function HomeHubPage() {
             </div>
           </section>
 
-          {/* Expanded footer / internal links */}
-          <footer className="mx-auto max-w-5xl border-t border-stone-900/80 pt-5 text-[11px] text-stone-500">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-              <div className="space-y-1">
-                <p className="font-medium text-stone-300">Calculators.digital</p>
-                <p>Calculators that feel like real devices, built for everyday use.</p>
-              </div>
-              <div className="grid gap-3 text-[11px] sm:grid-cols-3">
-                <div className="space-y-1">
-                  <p className="font-semibold text-stone-300">Everyday</p>
-                  <p>Basic, printing and tape‑style calculators for home and office.</p>
-                </div>
-                <div className="space-y-1">
-                  <p className="font-semibold text-stone-300">Finance & business</p>
-                  <p>Loan / EMI, mortgage payoff, discounts, tax / VAT and currency converters.</p>
-                </div>
-                <div className="space-y-1">
-                  <p className="font-semibold text-stone-300">Health & school</p>
-                  <p>BMI, BMR, water intake, GPA, grade needed and date / time helpers.</p>
-                </div>
-              </div>
-            </div>
-            <div className="mt-4 flex flex-wrap items-center justify-between gap-2 text-[10px] text-stone-600">
-              <p>© {new Date().getFullYear()} Calculators.digital</p>
-              <div className="flex gap-3">
-                <span className="cursor-default">Roadmap</span>
-                <span className="cursor-default">Feedback</span>
-                <span className="cursor-default">About</span>
-              </div>
-            </div>
-          </footer>
+          {/* Footer is rendered globally in RootLayout */}
         </div>
       </div>
     </>

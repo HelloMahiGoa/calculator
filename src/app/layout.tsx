@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sora, JetBrains_Mono, Outfit } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { WebSiteJsonLd } from "@/components/seo/JsonLd";
 
 const sora = Sora({
@@ -44,7 +45,8 @@ export default function RootLayout({
       <body className={`${sora.variable} ${jetBrainsMono.variable} ${outfit.variable} min-h-screen antialiased`}>
         <WebSiteJsonLd />
         <Header />
-        {children}
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
